@@ -107,8 +107,8 @@ INSERT INTO `Post` (`post_id`, `user_id`, `post_type_id`, `post_top_id`, `descri
 (2,	2,	1,	NULL,	'Hôm nay trời đẹp nhỉ ?',	2.3,	'6-5-2024',	NULL,	NULL),
 (3,	3,	2,	2,	'Tp Ho Chi Minh À?',	NULL,	'6-5-2024',	NULL,	NULL),
 (4,	2,	2,	2,	'chuẩn luôn bạn ơi',	NULL,	'6-5-2024',	NULL,	NULL),
-(5,	4,	1,	NULL,	'var nhau phát ko bạn ?',	NULL,	'6-5-2024',	NULL,	NULL),
-(6,	5,	1,	NULL,	'<3 bạn thích lập trình ? ',	NULL,	'6-5-2024',	NULL,	NULL);
+(5,	NULL,	1,	NULL,	'var nhau phát ko bạn ?',	NULL,	'6-5-2024',	NULL,	NULL),
+(6,	NULL,	1,	NULL,	'<3 bạn thích lập trình ? ',	NULL,	'6-5-2024',	NULL,	NULL);
 
 DROP TABLE IF EXISTS `PostImage`;
 CREATE TABLE `PostImage` (
@@ -165,8 +165,8 @@ CREATE TABLE `ReactPost` (
 INSERT INTO `ReactPost` (`react_post_id`, `post_id`, `user_id`, `like_state`) VALUES
 (1,	2,	2,	1),
 (2,	2,	3,	1),
-(3,	2,	5,	1),
-(4,	2,	4,	2);
+(3,	2,	NULL,	1),
+(4,	2,	NULL,	2);
 
 DROP TABLE IF EXISTS `Report`;
 CREATE TABLE `Report` (
@@ -210,14 +210,11 @@ CREATE TABLE `User` (
   PRIMARY KEY (`user_id`),
   KEY `role_id` (`role_id`),
   CONSTRAINT `User_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `Role` (`role_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 INSERT INTO `User` (`user_id`, `email`, `hash_password`, `fullname`, `gender`, `country`, `language`, `url_avatar`, `role_id`) VALUES
 (1,	'user_01@gmail.com',	'abc@123',	'user01',	0,	'Việt Nam',	'Việt Nam',	'https://avatar.iran.liara.run/public/boy?username=Ash',	1),
 (2,	'user_02@gmail.com',	'user_02',	'Adam',	0,	'Việt Nam',	'Việt Nam',	'https://avatar.iran.liara.run/public/boy?username=Ash',	1),
-(3,	'user_03@gmail.com',	'user_03',	'User_03',	1,	'Việt Nam',	'Việt Nam',	'https://avatar.iran.liara.run/public/boy?username=Ash',	1),
-(4,	'user_04@gmail.com',	'user_04',	'User_04',	0,	'Việt Nam',	'Việt Nam',	'https://avatar.iran.liara.run/public/boy?username=Ash',	1),
-(5,	'user_05@gmail.com',	'abc@123',	'user_05',	0,	'Việt Nam',	'Việt Nam',	'https://avatar.iran.liara.run/public/boy?username=Ash',	1),
-(6,	'user_03@gmail.com',	'user_03',	'User_03',	0,	'Việt Nam',	'Việt Nam',	'https://avatar.iran.liara.run/public/boy?username=Ash',	3);
+(3,	'user_03@gmail.com',	'user_03',	'User_03',	1,	'Việt Nam',	'Việt Nam',	'https://avatar.iran.liara.run/public/boy?username=Ash',	1);
 
--- 2024-05-06 10:47:17
+-- 2024-05-10 09:36:42
